@@ -112,7 +112,7 @@ export default function PageProductForm() {
       // Create new product
       axios
         .post(`${API_PATHS.bff}/products`, productToSave)
-        .then(() => history.push("/admin/products"));
+        .then(() => history.push("/"));
     } else {
       // Update the specific product
       axios
