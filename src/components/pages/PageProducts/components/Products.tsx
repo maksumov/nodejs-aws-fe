@@ -11,7 +11,6 @@ import API_PATHS from "constants/apiPaths";
 import { Product } from "models/Product";
 import React, { useEffect, useState } from "react";
 import { formatAsPrice } from "utils/utils";
-import productList from "./productList.json";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -36,10 +35,7 @@ export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    axios
-      .get(`${API_PATHS.bff}/product/available/`)
-      .then((res) => setProducts(res.data));
-    setProducts(productList);
+    axios.get(`${API_PATHS.bff}/products`).then((res) => setProducts(res.data));
   }, []);
 
   return (
