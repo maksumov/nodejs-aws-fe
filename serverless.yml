@@ -1,5 +1,7 @@
-service: maksumov-third-rs-app
 frameworkVersion: "2"
+service: maksumov-rsschool-fe-app
+org: maksumov
+app: rss-store
 
 provider:
   name: aws
@@ -13,7 +15,7 @@ plugins:
 custom:
   ## Serverless-finch configuration
   client:
-    bucketName: maksumov-third-rs-app
+    bucketName: maksumov-rsschool-fe-app
     distributionFolder: build
     region: eu-west-1
     indexDocument: index.html
@@ -24,6 +26,7 @@ custom:
 
 # you can add CloudFormation resource templates here
 resources:
+  Description: RS School Node in AWS course - FE App stack
   Resources:
     ## Specifying the S3 Bucket
     WebAppS3Bucket:
